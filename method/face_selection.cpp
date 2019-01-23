@@ -93,7 +93,7 @@ void FaceSelection::optimize(const HypothesisGenerator::Adjacency& adjacency, Li
 	std::size_t num_faces = model_->size_of_facets();
 	std::size_t num_edges = 0;
 
-	typedef typename HypothesisGenerator::Intersection Intersection;
+	typedef  HypothesisGenerator::Intersection Intersection;
 	std::map<const Intersection*, std::size_t> edge_usage_status;	// keep or remove an intersecting edges
 	for (std::size_t i = 0; i < adjacency.size(); ++i) {
 		const Intersection& fan = adjacency[i];

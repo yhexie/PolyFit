@@ -193,9 +193,9 @@ void MainWindow::dropEvent(QDropEvent *e) {
     }
 }
 
-
+//构建信号槽
 void MainWindow::createActions() {
-	connect(actionOpen, SIGNAL(triggered()), this, SLOT(open()));
+	connect(actionOpen, SIGNAL(triggered()), this, SLOT(open()));//打开文件
 	connect(actionSave, SIGNAL(triggered()), this, SLOT(save()));
 
 	connect(actionSnapshot, SIGNAL(triggered()), this, SLOT(snapshotScreen()));

@@ -57,7 +57,7 @@ public:
 		const vec3* s;
 		const vec3* t;
 	};
-	typedef typename std::vector<Intersection>		Adjacency;
+	typedef  std::vector<Intersection>		Adjacency;
 
 	// the adjacency information will be used to formulate the hard constraints.
 	Adjacency extract_adjacency(Map* mesh);

@@ -27,7 +27,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <gurobi_c++.h>
 
 #ifdef WIN32
-#if (_MSC_VER == 1900) // vs 2015
+#if (_MSC_VER == 1800) // vs 2013
+#pragma comment(lib, "gurobi70.lib")
+#ifdef _DEBUG
+#pragma comment(lib, "gurobi_c++mdd2013.lib")
+#else
+#pragma comment(lib, "gurobi_c++md2013.lib")
+#endif
+#elif (_MSC_VER == 1900) // vs 2015
 #pragma comment(lib, "gurobi80.lib")
 #ifdef _DEBUG
 #pragma comment(lib, "gurobi_c++mdd2015.lib")

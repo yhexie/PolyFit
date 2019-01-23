@@ -1,97 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{2048E60D-2AE8-3654-9E9C-AA3CA59E181F}</ProjectGUID>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
-    <Keyword>Win32Proj</Keyword>
-    <Platform>x64</Platform>
-    <ProjectName>3rd_glpk</ProjectName>
-    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <ProjectGuid>{C81C174E-F9B1-3CFB-A362-51A6E5344040}</ProjectGuid>
+    <RootNamespace>3rd_glpk</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v141</PlatformToolset>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>3rd_glpk</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>3rd_glpk</PrimaryOutput>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">3rd_glpk</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">3rd_glpk</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>.\;amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;npp;proxy;simplex;zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <DisableSpecificWarnings>4267;4244;4101;4068;4716;4103;4700</DisableSpecificWarnings>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
-    <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;proxy;simplex;zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ResourceCompile>
-    <Midl>
-      <AdditionalIncludeDirectories>amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;proxy;simplex;zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
-    </Midl>
-    <Lib />
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;npp;proxy;simplex;zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.;.;amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;npp;proxy;simplex;zlib;C:\qt\qt5.6.2\5.6\msvc2013_64\mkspecs\win32-msvc2013;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -w34100 -w34189 -w44996 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DisableSpecificWarnings>4267;4244;4101;4068;4716;4103;4700</DisableSpecificWarnings>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <StringPooling>true</StringPooling>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;WIN32;WIN64;_WINDOWS;NDEBUG;HAVE_CONFIG_H;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
     </ClCompile>
-    <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;proxy;simplex;zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)\3rd_glpk.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
     <Midl>
-      <AdditionalIncludeDirectories>amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;proxy;simplex;zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
     </Midl>
-    <Lib />
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;WIN32;WIN64;_WINDOWS;NDEBUG;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.;amd;api;draft;bflib;cglib;colamd;env;minisat;misc;mpl;npp;proxy;simplex;zlib;C:\qt\qt5.6.2\5.6\msvc2013_64\mkspecs\win32-msvc2013;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-w34100 -w34189 -w44996 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;WIN32;WIN64;_WINDOWS;_DEBUG;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)\3rd_glpk.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;WIN32;WIN64;_WINDOWS;_DEBUG;HAVE_CONFIG_H;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="zlib\adler32.c" />
+    <ClCompile Include="api\advbas.c" />
+    <ClCompile Include="env\alloc.c" />
     <ClCompile Include="amd\amd_1.c" />
     <ClCompile Include="amd\amd_2.c" />
     <ClCompile Include="amd\amd_aat.c" />
@@ -104,74 +133,41 @@
     <ClCompile Include="amd\amd_postorder.c" />
     <ClCompile Include="amd\amd_preprocess.c" />
     <ClCompile Include="amd\amd_valid.c" />
-    <ClCompile Include="api\advbas.c" />
     <ClCompile Include="api\asnhall.c" />
     <ClCompile Include="api\asnlp.c" />
     <ClCompile Include="api\asnokalg.c" />
+    <ClCompile Include="misc\avl.c" />
+    <ClCompile Include="draft\bfd.c" />
+    <ClCompile Include="draft\bfx.c" />
+    <ClCompile Include="misc\bignum.c" />
+    <ClCompile Include="bflib\btf.c" />
+    <ClCompile Include="bflib\btfint.c" />
+    <ClCompile Include="intopt\cfg.c" />
+    <ClCompile Include="intopt\cfg1.c" />
+    <ClCompile Include="intopt\cfg2.c" />
     <ClCompile Include="api\ckasn.c" />
     <ClCompile Include="api\ckcnf.c" />
+    <ClCompile Include="intopt\clqcut.c" />
+    <ClCompile Include="colamd\colamd.c" />
+    <ClCompile Include="zlib\compress.c" />
+    <ClCompile Include="intopt\covgen.c" />
     <ClCompile Include="api\cplex.c" />
     <ClCompile Include="api\cpp.c" />
     <ClCompile Include="api\cpxbas.c" />
-    <ClCompile Include="api\graph.c" />
-    <ClCompile Include="api\gridgen.c" />
-    <ClCompile Include="api\intfeas1.c" />
-    <ClCompile Include="api\maxffalg.c" />
-    <ClCompile Include="api\maxflp.c" />
-    <ClCompile Include="api\mcflp.c" />
-    <ClCompile Include="api\mcfokalg.c" />
-    <ClCompile Include="api\mcfrelax.c" />
-    <ClCompile Include="api\minisat1.c" />
-    <ClCompile Include="api\mpl.c" />
-    <ClCompile Include="api\mps.c" />
-    <ClCompile Include="api\netgen.c" />
-    <ClCompile Include="api\npp.c" />
-    <ClCompile Include="api\pript.c" />
-    <ClCompile Include="api\prmip.c" />
-    <ClCompile Include="api\prob1.c" />
-    <ClCompile Include="api\prob2.c" />
-    <ClCompile Include="api\prob3.c" />
-    <ClCompile Include="api\prob4.c" />
-    <ClCompile Include="api\prob5.c" />
-    <ClCompile Include="api\prrngs.c" />
-    <ClCompile Include="api\prsol.c" />
-    <ClCompile Include="api\rdasn.c" />
-    <ClCompile Include="api\rdcc.c" />
-    <ClCompile Include="api\rdcnf.c" />
-    <ClCompile Include="api\rdipt.c" />
-    <ClCompile Include="api\rdmaxf.c" />
-    <ClCompile Include="api\rdmcf.c" />
-    <ClCompile Include="api\rdmip.c" />
-    <ClCompile Include="api\rdprob.c" />
-    <ClCompile Include="api\rdsol.c" />
-    <ClCompile Include="api\rmfgen.c" />
-    <ClCompile Include="api\strong.c" />
-    <ClCompile Include="api\topsort.c" />
-    <ClCompile Include="api\wcliqex.c" />
-    <ClCompile Include="api\weak.c" />
-    <ClCompile Include="api\wrasn.c" />
-    <ClCompile Include="api\wrcc.c" />
-    <ClCompile Include="api\wrcnf.c" />
-    <ClCompile Include="api\wript.c" />
-    <ClCompile Include="api\wrmaxf.c" />
-    <ClCompile Include="api\wrmcf.c" />
-    <ClCompile Include="api\wrmip.c" />
-    <ClCompile Include="api\wrprob.c" />
-    <ClCompile Include="api\wrsol.c" />
-    <ClCompile Include="bflib\btf.c" />
-    <ClCompile Include="bflib\btfint.c" />
+    <ClCompile Include="zlib\crc32.c" />
+    <ClCompile Include="zlib\deflate.c" />
+    <ClCompile Include="misc\dimacs.c" />
+    <ClCompile Include="env\dlsup.c" />
+    <ClCompile Include="misc\dmp.c" />
+    <ClCompile Include="env\env.c" />
+    <ClCompile Include="env\error.c" />
+    <ClCompile Include="misc\ffalg.c" />
     <ClCompile Include="bflib\fhv.c" />
     <ClCompile Include="bflib\fhvint.c" />
-    <ClCompile Include="bflib\ifu.c" />
-    <ClCompile Include="bflib\luf.c" />
-    <ClCompile Include="bflib\lufint.c" />
-    <ClCompile Include="bflib\scf.c" />
-    <ClCompile Include="bflib\scfint.c" />
-    <ClCompile Include="bflib\sgf.c" />
-    <ClCompile Include="bflib\sva.c" />
-    <ClCompile Include="colamd\colamd.c" />
-    <ClCompile Include="draft\bfd.c" />
-    <ClCompile Include="draft\bfx.c" />
+    <ClCompile Include="misc\fp2rat.c" />
+    <ClCompile Include="intopt\fpump.c" />
+    <ClCompile Include="misc\fvs.c" />
+    <ClCompile Include="misc\gcd.c" />
     <ClCompile Include="draft\glpapi06.c" />
     <ClCompile Include="draft\glpapi07.c" />
     <ClCompile Include="draft\glpapi08.c" />
@@ -194,55 +190,37 @@
     <ClCompile Include="draft\glpspm.c" />
     <ClCompile Include="draft\glpssx01.c" />
     <ClCompile Include="draft\glpssx02.c" />
-    <ClCompile Include="draft\lux.c" />
-    <ClCompile Include="env\alloc.c" />
-    <ClCompile Include="env\dlsup.c" />
-    <ClCompile Include="env\env.c" />
-    <ClCompile Include="env\error.c" />
-    <ClCompile Include="env\stdc.c" />
-    <ClCompile Include="env\stdout.c" />
-    <ClCompile Include="env\stream.c" />
-    <ClCompile Include="env\time.c" />
-    <ClCompile Include="env\tls.c" />
-    <ClCompile Include="intopt\cfg.c" />
-    <ClCompile Include="intopt\cfg1.c" />
-    <ClCompile Include="intopt\cfg2.c" />
-    <ClCompile Include="intopt\clqcut.c" />
-    <ClCompile Include="intopt\covgen.c" />
-    <ClCompile Include="intopt\fpump.c" />
     <ClCompile Include="intopt\gmicut.c" />
     <ClCompile Include="intopt\gmigen.c" />
-    <ClCompile Include="intopt\mirgen.c" />
-    <ClCompile Include="intopt\spv.c" />
-    <ClCompile Include="minisat\minisat.c" />
-    <ClCompile Include="misc\avl.c" />
-    <ClCompile Include="misc\bignum.c" />
-    <ClCompile Include="misc\dimacs.c" />
-    <ClCompile Include="misc\dmp.c" />
-    <ClCompile Include="misc\ffalg.c" />
-    <ClCompile Include="misc\fp2rat.c" />
-    <ClCompile Include="misc\fvs.c" />
-    <ClCompile Include="misc\gcd.c" />
+    <ClCompile Include="api\graph.c" />
+    <ClCompile Include="api\gridgen.c" />
+    <ClCompile Include="zlib\gzclose.c" />
+    <ClCompile Include="zlib\gzlib.c" />
+    <ClCompile Include="zlib\gzread.c" />
+    <ClCompile Include="zlib\gzwrite.c" />
+    <ClCompile Include="bflib\ifu.c" />
+    <ClCompile Include="zlib\inffast.c" />
+    <ClCompile Include="zlib\inflate.c" />
+    <ClCompile Include="zlib\inftrees.c" />
+    <ClCompile Include="api\intfeas1.c" />
     <ClCompile Include="misc\jd.c" />
     <ClCompile Include="misc\keller.c" />
     <ClCompile Include="misc\ks.c" />
+    <ClCompile Include="bflib\luf.c" />
+    <ClCompile Include="bflib\lufint.c" />
+    <ClCompile Include="draft\lux.c" />
+    <ClCompile Include="proxy\main.c" />
+    <ClCompile Include="api\maxffalg.c" />
+    <ClCompile Include="api\maxflp.c" />
     <ClCompile Include="misc\mc13d.c" />
     <ClCompile Include="misc\mc21a.c" />
-    <ClCompile Include="misc\mt1.c" />
-    <ClCompile Include="misc\mygmp.c" />
-    <ClCompile Include="misc\okalg.c" />
-    <ClCompile Include="misc\qmd.c" />
-    <ClCompile Include="misc\relax4.c" />
-    <ClCompile Include="misc\rng.c" />
-    <ClCompile Include="misc\rng1.c" />
-    <ClCompile Include="misc\round2n.c" />
-    <ClCompile Include="misc\str2int.c" />
-    <ClCompile Include="misc\str2num.c" />
-    <ClCompile Include="misc\strspx.c" />
-    <ClCompile Include="misc\strtrim.c" />
-    <ClCompile Include="misc\triang.c" />
-    <ClCompile Include="misc\wclique.c" />
-    <ClCompile Include="misc\wclique1.c" />
+    <ClCompile Include="api\mcflp.c" />
+    <ClCompile Include="api\mcfokalg.c" />
+    <ClCompile Include="api\mcfrelax.c" />
+    <ClCompile Include="minisat\minisat.c" />
+    <ClCompile Include="api\minisat1.c" />
+    <ClCompile Include="intopt\mirgen.c" />
+    <ClCompile Include="api\mpl.c" />
     <ClCompile Include="mpl\mpl1.c" />
     <ClCompile Include="mpl\mpl2.c" />
     <ClCompile Include="mpl\mpl3.c" />
@@ -250,15 +228,48 @@
     <ClCompile Include="mpl\mpl5.c" />
     <ClCompile Include="mpl\mpl6.c" />
     <ClCompile Include="mpl\mplsql.c" />
+    <ClCompile Include="api\mps.c" />
+    <ClCompile Include="misc\mt1.c" />
+    <ClCompile Include="misc\mygmp.c" />
+    <ClCompile Include="api\netgen.c" />
+    <ClCompile Include="api\npp.c" />
     <ClCompile Include="npp\npp1.c" />
     <ClCompile Include="npp\npp2.c" />
     <ClCompile Include="npp\npp3.c" />
     <ClCompile Include="npp\npp4.c" />
     <ClCompile Include="npp\npp5.c" />
     <ClCompile Include="npp\npp6.c" />
-    <ClCompile Include="proxy\main.c" />
+    <ClCompile Include="misc\okalg.c" />
+    <ClCompile Include="api\pript.c" />
+    <ClCompile Include="api\prmip.c" />
+    <ClCompile Include="api\prob1.c" />
+    <ClCompile Include="api\prob2.c" />
+    <ClCompile Include="api\prob3.c" />
+    <ClCompile Include="api\prob4.c" />
+    <ClCompile Include="api\prob5.c" />
     <ClCompile Include="proxy\proxy.c" />
     <ClCompile Include="proxy\proxy1.c" />
+    <ClCompile Include="api\prrngs.c" />
+    <ClCompile Include="api\prsol.c" />
+    <ClCompile Include="misc\qmd.c" />
+    <ClCompile Include="api\rdasn.c" />
+    <ClCompile Include="api\rdcc.c" />
+    <ClCompile Include="api\rdcnf.c" />
+    <ClCompile Include="api\rdipt.c" />
+    <ClCompile Include="api\rdmaxf.c" />
+    <ClCompile Include="api\rdmcf.c" />
+    <ClCompile Include="api\rdmip.c" />
+    <ClCompile Include="api\rdprob.c" />
+    <ClCompile Include="api\rdsol.c" />
+    <ClCompile Include="misc\relax4.c" />
+    <ClCompile Include="api\rmfgen.c" />
+    <ClCompile Include="misc\rng.c" />
+    <ClCompile Include="misc\rng1.c" />
+    <ClCompile Include="misc\round2n.c" />
+    <ClCompile Include="bflib\scf.c" />
+    <ClCompile Include="bflib\scfint.c" />
+    <ClCompile Include="bflib\sgf.c" />
+    <ClCompile Include="intopt\spv.c" />
     <ClCompile Include="simplex\spxat.c" />
     <ClCompile Include="simplex\spxchuzc.c" />
     <ClCompile Include="simplex\spxchuzr.c" />
@@ -269,19 +280,34 @@
     <ClCompile Include="simplex\spychuzc.c" />
     <ClCompile Include="simplex\spychuzr.c" />
     <ClCompile Include="simplex\spydual.c" />
-    <ClCompile Include="zlib\adler32.c" />
-    <ClCompile Include="zlib\compress.c" />
-    <ClCompile Include="zlib\crc32.c" />
-    <ClCompile Include="zlib\deflate.c" />
-    <ClCompile Include="zlib\gzclose.c" />
-    <ClCompile Include="zlib\gzlib.c" />
-    <ClCompile Include="zlib\gzread.c" />
-    <ClCompile Include="zlib\gzwrite.c" />
-    <ClCompile Include="zlib\inffast.c" />
-    <ClCompile Include="zlib\inflate.c" />
-    <ClCompile Include="zlib\inftrees.c" />
+    <ClCompile Include="env\stdc.c" />
+    <ClCompile Include="env\stdout.c" />
+    <ClCompile Include="misc\str2int.c" />
+    <ClCompile Include="misc\str2num.c" />
+    <ClCompile Include="env\stream.c" />
+    <ClCompile Include="api\strong.c" />
+    <ClCompile Include="misc\strspx.c" />
+    <ClCompile Include="misc\strtrim.c" />
+    <ClCompile Include="bflib\sva.c" />
+    <ClCompile Include="env\time.c" />
+    <ClCompile Include="env\tls.c" />
+    <ClCompile Include="api\topsort.c" />
     <ClCompile Include="zlib\trees.c" />
+    <ClCompile Include="misc\triang.c" />
     <ClCompile Include="zlib\uncompr.c" />
+    <ClCompile Include="api\wcliqex.c" />
+    <ClCompile Include="misc\wclique.c" />
+    <ClCompile Include="misc\wclique1.c" />
+    <ClCompile Include="api\weak.c" />
+    <ClCompile Include="api\wrasn.c" />
+    <ClCompile Include="api\wrcc.c" />
+    <ClCompile Include="api\wrcnf.c" />
+    <ClCompile Include="api\wript.c" />
+    <ClCompile Include="api\wrmaxf.c" />
+    <ClCompile Include="api\wrmcf.c" />
+    <ClCompile Include="api\wrmip.c" />
+    <ClCompile Include="api\wrprob.c" />
+    <ClCompile Include="api\wrsol.c" />
     <ClCompile Include="zlib\zio.c" />
     <ClCompile Include="zlib\zutil.c" />
   </ItemGroup>
@@ -289,6 +315,10 @@
     <ClInclude Include="glpk.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_x64="msvc2013_64" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

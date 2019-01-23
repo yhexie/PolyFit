@@ -1106,8 +1106,8 @@ HypothesisGenerator::Adjacency HypothesisGenerator::extract_adjacency(Map* mesh)
 	vertex_source_planes_.bind(mesh, "VertexSourcePlanes");
 
 	// an edge is denoted by its two end points
-	typedef typename std::map< vec3*, std::set<MapTypes::Halfedge*> >	Edge_map;
-	typedef typename std::map< vec3*, Edge_map >						Face_pool;
+	typedef  std::map< vec3*, std::set<MapTypes::Halfedge*> >	Edge_map;
+	typedef  std::map< vec3*, Edge_map >						Face_pool;
 	Face_pool face_pool;
 
 	FOR_EACH_HALFEDGE(Map, mesh, h) {
